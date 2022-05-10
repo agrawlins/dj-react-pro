@@ -12,30 +12,25 @@ code {
     monospace;
 }
 
+.all {
+  margin-top: -50px;
+  height: 1000px;
+  color: white;
+  background-color: rgb(48, 48, 48);
+}
+
 .App {
   display: grid;
   justify-content: center;
   margin:150px
 }
 
+h1 {
+  justify-self: center;
+}
+
 .app-header {
   justify-self: center;
-}
-
-.Square {
-  justify-self: center;
-  margin: 5px;
-  display: grid;
-  height: 300px;
-  width: 300px;
-  border-radius: 20px;
-  border-style: solid;
-}
-
-.square-quad {
-  display: grid;
-  grid-template-rows: 1fr 1fr;
-  grid-template-columns: 1fr 1fr;
 }
 
 .header {
@@ -55,6 +50,33 @@ code {
   color: white;
   background-color: rgb(17, 17, 45);
   box-shadow: 0px 2.98256px 7.4564px rgba(0, 0, 0, 0.9);
+}
+
+.Square {
+  justify-self: center;
+  margin: 5px;
+  display: grid;
+  height: 250px;
+  width: 250px;
+  border-radius: 20px;
+  border-style: solid;
+}
+
+.square-quad {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+}
+
+button {
+  margin: 5px;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.partyButtons {
+  display: flex;
+  justify-content: space-evenly;
 }
 
 footer{
