@@ -90,3 +90,19 @@ footer{
   padding: 20px;
   box-shadow: 0px 2.98256px 7.4564px rgba(0, 0, 0, 0.1);
 }
+
+a:link {
+  color: white;
+}
+
+a:visited {
+  color: grey;
+}
+
+a:hover {
+  color: cornflowerblue;
+}
+
+a:active {
+  color: rgb(58, 86, 138);
+}

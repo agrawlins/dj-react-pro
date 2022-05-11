@@ -3,6 +3,10 @@ import Square from "./Components/Square";
 import Header from "./Components/Header";
 import Footer from "./Components/Footer";
 import Fart from "./Sounds/Fart.mp3"
+import Music from "./Sounds/Music.mp3"
+
+const myAudio = new Audio(Music)
+myAudio.play();
 
 const App = () => {
   let [colors, setColors] = React.useState([
