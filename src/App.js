@@ -1,12 +1,22 @@
-import React from "react";
+import React, {useState} from "react";
 import Square from "./Components/Square";
 import Header from "./Components/Header";
 import Footer from "./Components/Footer";
 import Fart from "./Sounds/Fart.mp3"
 import Music from "./Sounds/Music.mp3"
 
-const myAudio = new Audio(Music)
-myAudio.play();
+let musicActive = false
+const music = new Audio(Music)
+music.loop = true
+
+const elevatorMusic = () => {
+  musicActive = !musicActive
+  if (musicActive === true) {
+    music.pause();
+  } else {
+    music.play();
+  }
+}
 
 const App = () => {
   let [colors, setColors] = React.useState([
@@ -75,6 +85,7 @@ const App = () => {
       </header>
       <div className="App">
       <h1>PUSH MY BUTTONS!!!</h1>
+      <button onClick={elevatorMusic}>MUSIC ON/OFF</button>
         <section className="square-quad">
           <Square color={colors[0]}/>
           <Square color={colors[1]}/>
