@@ -5,20 +5,34 @@ import Footer from "./Components/Footer";
 import Fart from "./Sounds/Fart.mp3"
 import Music from "./Sounds/Music.mp3"
 
-let musicActive = false
 const music = new Audio(Music)
 music.loop = true
+const fart = new Audio(Fart)
 
-const elevatorMusic = () => {
-  musicActive = !musicActive
-  if (musicActive === true) {
-    music.pause();
-  } else {
-    music.play();
-  }
-}
+
+// const elevatorMusic = () => {
+//   musicActive = !musicActive
+//   if (musicActive === true) {
+//     music.pause();
+//   } else {
+//     music.play();
+//   }
+// }
 
 const App = () => {
+  
+  const elevatorMusic = () => {
+    setMusicActive(!musicActive)
+    if (musicActive === true) {
+      music.pause();
+    } else {
+      music.play();
+    }
+  }
+
+  const [musicActive, setMusicActive] = useState(false)
+
+
   let [colors, setColors] = React.useState([
     "white",
     "white",
@@ -27,7 +41,6 @@ const App = () => {
   ])
 
   const changeBlackNWhite = () => {
-    const fart = new Audio(Fart)
     fart.play()
     setColors(prevColors => prevColors.map(each => each === "white" ? "black" : "white"))
   }
@@ -39,38 +52,32 @@ const App = () => {
   }
 
   const changeBottomLeftBlue = () => {
-    const fart = new Audio(Fart)
     fart.play()
     setColors(prevColors => [...prevColors.slice(0, 2), ...prevColors.slice(2, 3).map(each => each === "blue" ? "white" : "blue"), ...prevColors.slice(3, 4)])
   }
 
   const changeBottomRightBlue = () => {
-    const fart = new Audio(Fart)
     fart.play()
     setColors(prevColors => [...prevColors.slice(0, 3), ...prevColors.slice(3, 4).map(each => each === "blue" ? "white" : "blue")])
   }
 
   const changeTopLeftRed = () => {
-    const fart = new Audio(Fart)
     fart.play()
     setColors(prevColors => [...prevColors.slice(0, 1).map(each => each === "red" ? "white" : "red"), ...prevColors.slice(1, 4)])
   }
 
   const changeTopRightOrange = () => {
-    const fart = new Audio(Fart)
     fart.play()
     setColors(prevColors => [...prevColors.slice(0, 1), ...prevColors.slice(1, 2).map(each => each === "orange" ? "white" : "orange"), ...prevColors.slice(2, 4)])
   }
 
 
   const changeBottomLeftYellow = () => {
-    const fart = new Audio(Fart)
     fart.play()
     setColors(prevColors => [...prevColors.slice(0, 2), ...prevColors.slice(2, 3).map(each => each === "yellow" ? "white" : "yellow"), ...prevColors.slice(3, 4)])
   }
 
   const changeBottomRightGreen = () => {
-    const fart = new Audio(Fart)
     fart.play()
     setColors(prevColors => [...prevColors.slice(0, 3), ...prevColors.slice(3, 4).map(each => each === "green" ? "white" : "green")])
   }
